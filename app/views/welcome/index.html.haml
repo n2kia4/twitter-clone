@@ -1,5 +1,15 @@
-%h1
-  Welcome to Twitter Clone
-%h2
-  Check the source code
-  %a{:href => "https://github.com/natsukia3/twitter-clone"} GitHub
+.row
+  .col-lg-8.col-lg-offset-2
+    .row
+      .col-lg-8
+        %h1
+          Welcome to Twitter Clone
+        %h2
+          Check the source code
+          %a{:href => "https://github.com/natsukia3/twitter-clone"} GitHub
+
+      .col-lg-4
+        .well
+          = render 'devise/shared/sign_in_box'
+        .well
+          = render 'devise/shared/sign_up_box'
