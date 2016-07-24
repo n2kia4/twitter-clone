@@ -10,6 +10,8 @@ class User < ApplicationRecord
   validates :username, presence: true, length: { maximum: 15}, uniqueness: { case_sensitive: false }
   validates :description, length: { maximum: 160 }
 
+  mount_uploader :avatar, AvatarUploader
+
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
