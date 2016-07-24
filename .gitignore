@@ -21,3 +21,6 @@
 
 # Ignore DS_store files
 .DS_Store
+
+# Ignore image files.
+/public/uploads
