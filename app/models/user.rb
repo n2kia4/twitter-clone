@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   attr_accessor :login
 
+  has_many :tweets, dependent: :destroy
+
   validates :name, presence: true, length: { maximum: 20}
   validates :username, presence: true, length: { maximum: 15}, uniqueness: { case_sensitive: false }
   validates :description, length: { maximum: 160 }
