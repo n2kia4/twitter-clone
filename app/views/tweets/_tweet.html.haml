@@ -1,0 +1,13 @@
+%li{:id => "tweet-#{tweet.id}"}
+  = image_tag tweet.user.avatar, class: "photo"
+  = link_to tweet.user do
+    %span.name= tweet.user.name
+  %span.username
+    @#{tweet.user.username}
+  %span.content
+    = tweet.content
+    = image_tag tweet.photo.url if tweet.photo?
+  %span.timestamp
+    #{time_ago_in_words(tweet.created_at)} ago.
+    - if tweet.user == current_user
+      = link_to "delete", tweet, method: :delete, data: { confirm: "You sure?" }

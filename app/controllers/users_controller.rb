@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user
 
   def show
+    @tweets = @user.tweets.page(params[:page])
   end
 
   def edit

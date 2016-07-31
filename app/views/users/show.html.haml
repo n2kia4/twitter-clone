@@ -7,3 +7,7 @@
       = @user.location
     %h4
       = link_to @user.website_url, @user.website_url
+  .col-md-6
+    %ol.tweets
+      = render @tweets
+    = paginate @tweets
