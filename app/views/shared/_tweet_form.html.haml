@@ -1,0 +1,6 @@
+= form_for(@tweet, html: { multipart: true }) do |f|
+  .field
+    = f.text_area :content, class: "form-control", placeholder: "What's happening?", required: true
+  .field
+    = f.file_field :photo
+  = f.submit "Tweet", class: "btn btn-large btn-primary"
