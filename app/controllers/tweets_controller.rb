@@ -4,11 +4,14 @@ class TweetsController < ApplicationController
   def create
     @tweet = current_user.tweets.build(tweet_params)
 
-    @tweet.save
-    redirect_to(
-      root_path,
-      notice: "Tweet created!"
-    )
+    if @tweet.save
+      redirect_to(
+        root_path,
+        notice: "Tweet created!"
+      )
+    else
+      render 'home/index'
+    end
   end
 
   def destroy
