@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, path: '/', only: [:show, :edit, :update]
   resources :tweets, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
 
   authenticated :user do
     root to: 'home#index', as: 'home'
