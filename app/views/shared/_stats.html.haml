@@ -1,0 +1,17 @@
+- @user ||= current_user
+.stats
+  = link_to user_path(@user) do
+    %h4
+      TWEETS
+    %strong
+      = @user.tweets.count
+  = link_to following_user_path(@user) do
+    %h4
+      FOLLOWING
+    %strong#following
+      = @user.following.count
+  = link_to followers_user_path(@user) do
+    %h4
+      FOLLOWERS
+    %strong#followers
+      = @user.followers.count
