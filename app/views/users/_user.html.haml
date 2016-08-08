@@ -1,0 +1,7 @@
+%li
+  = link_to user_path(user) do
+    = image_tag user.avatar
+    = user.name
+    = user.username
+  %p.description
+    = user.description
