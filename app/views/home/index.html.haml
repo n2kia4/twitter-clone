@@ -4,4 +4,9 @@
     = render 'shared/stats'
   .col-md-6
     .well
-      = render 'shared/tweet_form'
+      .row
+        .col-md-10.col-md-offset-1
+          = render 'shared/tweet_form'
+      .ol.tweets
+        = render(@timeline) || "Your timeline is currently empty."
+      = paginate @timeline

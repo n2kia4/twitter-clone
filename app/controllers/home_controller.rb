@@ -3,5 +3,6 @@ class HomeController < ApplicationController
 
   def index
     @tweet = current_user.tweets.build
+    @timeline = Tweet.where("user_id in (?) OR user_id = ?", current_user.following_ids, current_user).page(params[:page])
   end
 end

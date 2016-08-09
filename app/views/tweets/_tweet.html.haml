@@ -1,9 +1,11 @@
 %li{:id => "tweet-#{tweet.id}"}
-  = image_tag tweet.user.avatar, class: "photo"
   = link_to tweet.user do
-    %span.name= tweet.user.name
-  %span.username
-    @#{tweet.user.username}
+    = image_tag tweet.user.avatar, size: 50, class: "photo" if tweet.user.avatar?
+    %span.name
+      = tweet.user.name
+  = link_to tweet.user do
+    %span.username
+      @#{tweet.user.username}
   %span.content
     = tweet.content
     = image_tag tweet.photo.url if tweet.photo?
