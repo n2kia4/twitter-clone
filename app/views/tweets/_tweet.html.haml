@@ -1,6 +1,6 @@
 %li{:id => "tweet-#{tweet.id}"}
   = link_to tweet.user do
-    = image_tag tweet.user.avatar, size: 50, class: "photo" if tweet.user.avatar?
+    = image_tag tweet.user.avatar, size: 50
     %span.name
       = tweet.user.name
   = link_to tweet.user do
