@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :users, path: '/', only: [:show, :edit, :update] do
+  resources :users, path: '/',
+                    param: :username,
+                    only: [:show, :edit, :update] do
     member do
       get :following, :followers
     end
