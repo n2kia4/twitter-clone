@@ -17,7 +17,10 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :follower
 
   validates :name, presence: true, length: { maximum: 20}
-  validates :username, presence: true, length: { maximum: 15}, uniqueness: { case_sensitive: false }
+  validates :username, namespace: true,
+                       presence: true,
+                       length: { maximum: 15},
+                       uniqueness: { case_sensitive: false }
   validates :description, length: { maximum: 160 }
 
   mount_uploader :avatar, AvatarUploader
