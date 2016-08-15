@@ -6,6 +6,8 @@
       = render 'shared/error_messages', object: f.object
       .field
         = f.label :avatar
+        %br/
+        = image_tag @user.avatar, size: 200
         = f.file_field :avatar, class: 'form-control'
       .field
         = f.label :name
