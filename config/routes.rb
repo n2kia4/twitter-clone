@@ -8,7 +8,11 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
-  resources :tweets, only: [:create, :destroy]
+
+  resources :tweets, only: [:create, :destroy] do
+    resource :likes, only: [:create, :destroy]
+  end
+
   resources :relationships, only: [:create, :destroy]
 
   authenticated :user do
