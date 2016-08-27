@@ -1,0 +1,2 @@
+$('#like-tweet-#{@like.tweet.id}').html("#{j render 'likes/like_button', tweet: @like.tweet}");
+$('#likes-count-#{@like.tweet.id}').html("#{@tweet.likes_count}");

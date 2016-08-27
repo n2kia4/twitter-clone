@@ -13,3 +13,7 @@
     #{time_ago_in_words(tweet.created_at)} ago.
     - if tweet.user == current_user
       = link_to "delete", tweet, method: :delete, data: { confirm: "You sure?" }
+  %span{:id => "like-tweet-#{tweet.id}"}
+    = render 'likes/like_button', tweet: tweet
+  %span{:id => "likes-count-#{tweet.id}"}
+    = tweet.likes_count

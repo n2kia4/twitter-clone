@@ -1,0 +1,6 @@
+- if tweet.liked?(current_user)
+  = link_to tweet_likes_path(tweet), method: :delete, remote: true do
+    %i.fa.fa-heart{"aria-hidden" => "true"}
+- else
+  = link_to tweet_likes_path(tweet), method: :post, remote: true do
+    %i.fa.fa-heart-o{"aria-hidden" => "true"}
