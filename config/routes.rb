@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  # Search
+  get 'search' => 'search#show'
+
   resources :users, path: '/',
                     param: :username,
                     only: [:show, :edit, :update] do

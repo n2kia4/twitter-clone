@@ -12,4 +12,8 @@ class Tweet < ApplicationRecord
   def liked?(user)
     likes.find_by(user_id: user)
   end
+
+  def self.search(search)
+    Tweet.where(['content ILIKE ?', "%#{search}%"])
+  end
 end
