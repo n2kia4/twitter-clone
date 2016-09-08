@@ -3,6 +3,7 @@
     - if params[:search].blank?
       %h1
         See what’s happening right now
+      = render 'search/form'
     - elsif @tweets.empty?
       %p
         No results.
