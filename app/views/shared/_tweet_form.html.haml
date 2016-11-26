@@ -4,4 +4,6 @@
     = f.text_area :content, class: "form-control", placeholder: "What's happening?", required: true
   .field
     = f.file_field :photo
-  = f.submit "Tweet", class: "btn btn-large btn-primary"
+  = button_tag type: "submit", class: "btn btn-large btn-primary" do
+    %i.fa.fa-pencil
+    Tweet
